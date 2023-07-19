@@ -1,0 +1,29 @@
+plugins {
+    id 'c'
+}
+
+model {
+    components {
+        main(NativeExecutableSpec) {
+            sources {
+                c {
+                    source {
+                        srcDir 'src/main/c'
+                    }
+                }
+            }
+        }
+    }
+}
+
+task createCProjectStructure {
+    doLast {
+        def sourceDir = file('src/main/c')
+        def headersDir = file('src/main/headers')
+        def testDir = file('src/test/c')
+
+        sourceDir.mkdirs()
+        headersDir.mkdirs()
+        testDir.mkdirs()
+    }
+}
