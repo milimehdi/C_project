@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Compiler le programme main.c avec Gradle
-                sh 'gradle build'
+                bat "gradle clean build"
             }
         }
         stage('Run') {
