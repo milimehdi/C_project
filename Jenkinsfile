@@ -16,7 +16,7 @@ pipeline {
         stage('Run') {
             steps {
                 // Exécuter le programme main.c
-                sh './build/main'
+                sh './build/exe/main'
             }
         }
     }
