@@ -10,13 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Compiler le programme main.c avec Gradle
-                bat "gradle clean build"
+                sh './gradlew clean build'
             }
         }
         stage('Run') {
             steps {
                 // Exécuter le programme main.c
-                sh './build/exe/main'
+                sh './app/build/exe/main/main'
             }
         }
     }
